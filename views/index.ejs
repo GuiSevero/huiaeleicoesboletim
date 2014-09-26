@@ -1,0 +1,73 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InstaGurizada</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+ <link href="css/bootstrap.css" rel="stylesheet">
+ <link href="css/bootstrap-responsive.css" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="/vegas/jquery.vegas.css" />
+</head>
+
+<body>
+<body>
+    <div id="background">
+    </div>
+
+     <% if(candidatos) {
+        for(i in candidatos){ %>
+          <p ><%= candidatos[i].nome %></p>
+      <%}}%>
+</body>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/socket.io.min.js"></script>
+  <script type="text/javascript" src="/vegas/jquery.vegas.js"></script>
+
+
+<script type="text/javascript"> 
+
+       $.get('/photos', function(data){
+          var photos = $.map(data, function(item){
+              return {
+                src: item.image,
+                fade: 1500
+              }
+          });
+          $.vegas('slideshow',{backgrounds: photos});
+
+       });
+
+      var socket = io.connect('/');
+      socket.on('photo', function(data){
+
+          console.log(data);
+
+          var prevStep = $.vegas('get', 'step');
+
+          $.vegas('slideshow',{backgrounds: [{src: data.url, fade: 1500}]});
+          setTimeout(function(){
+               $.get('/photos', function(data){
+                  var photos = $.map(data, function(item){
+                      return {
+                        src: item.image,
+                        fade: 1500
+                      }
+                  });
+                  $.vegas('slideshow',{backgrounds: photos});
+                  $.vegas('jump', prevStep);
+               });
+          }, 10000);
+
+      });
+    </script>
+
+  </body>
+</html>
