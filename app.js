@@ -60,14 +60,38 @@ app.get('/', function(req, res) {
 });
 
 app.get('/add', function(req, res) {
-   res.render('form'); 
+
+    Candidato.find( {}, function(err, documents){
+        if (err) res.send(500);
+        res.render('form', { candidatos: documents });   
+    });
 });
 
 
 app.post('/add', function(req, res) {
-  console.log(req.body.Candidato);
-   res.render('form'); 
+  var cand = new Candidato(req.body.Candidato);
+  cand.save(function(err){
+    if(err) res.send(500);
+    Candidato.find( {}, function(err, documents){
+        if (err) res.send(500);
+        io.sockets.emit("new_candidato", {data: cand});
+        res.render('form', { candidatos: documents });   
+    });
+  });
 });
+
+app.post('/vote', function(req, res) {
+  var cand = new Candidato(req.body.Candidato);
+  cand.save(function(err){
+    if(err) res.send(500);
+    Candidato.find( {}, function(err, documents){
+        if (err) res.send(500);
+        io.sockets.emit("new_candidato", {data: cand});
+        res.render('form', { candidatos: documents });   
+    });
+  });
+});
+
 
 
 var sv = http.createServer(app);
