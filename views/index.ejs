@@ -7,11 +7,15 @@
     <title>InstaGurizada</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Le styles -->
- <link href="css/bootstrap.css" rel="stylesheet">
- <link href="css/bootstrap-responsive.css" rel="stylesheet">
- <link rel="stylesheet" type="text/css" href="/vegas/jquery.vegas.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<style type="text/css">
+.img-candidato{
+ max-width: 100px;
+}
+
+</style>
 </head>
 
 <body>
@@ -23,13 +27,32 @@
         for(i in candidatos){ %>
           <p ><%= candidatos[i].nome %></p>
       <%}}%>
+
+<table class="table">
+  <thead>
+    <tr><th>Candidato</th><th>Número</th><th>Votos</th>
+  </thead>
+  <tbody>
+    <% if(candidatos) { 
+        for(i in candidatos){ %>
+          <td><img src="<%= candidatos[i].imagem %>" class="img-circle img-candidato" alt="<%= candidatos[i].nome %>"></td>
+          <td><%= candidatos[i].numero %></td>
+          <td><%= candidatos[i].votos %></td>
+      <%}}%>
+  </tbody>
+</table>
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/socket.io.min.js"></script>
 </body>
 
-  <!-- Scripts -->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/socket.io.min.js"></script>
-  <script type="text/javascript" src="/vegas/jquery.vegas.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+
+
+
 
 
 <script type="text/javascript"> 
@@ -71,3 +94,5 @@
 
   </body>
 </html>
+
+

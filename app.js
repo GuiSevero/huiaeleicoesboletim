@@ -19,7 +19,7 @@ var app = express();
 app.configure(function(){
     app.set('port', process.env.PORT || 8080);
     app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
+    app.set('view engine', 'jade');
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(express.cookieParser('diogola'));
@@ -29,6 +29,13 @@ app.configure(function(){
     app.use(express.static(path.join(__dirname, 'public')));
   });
 
+/*
+var gabi = new Candidato({ nome: 'Gabriela Jung', imagem: 'tababa', numero: '12020' });
+
+gabi.save(function(err){
+  if(err) console.log(err);
+});
+*/
 
 
   app.post('/vote', function(req, res){
@@ -46,11 +53,20 @@ app.configure(function(){
 app.get('/', function(req, res) {
 
    Candidato.find( {}, function(err, documents){
-      console.log(documents);
         if (err) res.send(500);
         res.render('index', { candidatos: documents });   
     });
 
+});
+
+app.get('/add', function(req, res) {
+   res.render('form'); 
+});
+
+
+app.post('/add', function(req, res) {
+  console.log(req.body.Candidato);
+   res.render('form'); 
 });
 
 

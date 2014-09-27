@@ -1,0 +1,15 @@
+//- index.jade
+extends ./layout.jade
+
+block content
+	form(class='form', method="post", role="form")
+		div(class="form-group")
+			label(for="Candidato_nome") Nome
+			input(type="text", name="Candidato[nome]", id="Candidato_nome", class="form-control", placeholder="Nome")
+		div(class="form-group")
+			label(for="Candidato_numero") Número
+			input(type="text", name="Candidato[numero]", id="Candidato_numero", class="form-control", placeholder="Numero")
+		div(class="form-group")
+			label(for="Candidato_imagem") Imagem
+			input(type="text", name="Candidato[imagem]", id="Candidato_imagem", class="form-control", placeholder="Imagem")
+		input(type="submit", class="btn btn-default", value="Salvar")			

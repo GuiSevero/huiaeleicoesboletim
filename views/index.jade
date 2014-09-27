@@ -1,0 +1,15 @@
+//- index.jade
+extends ./layout.jade
+
+block content
+	h1 Candidatos
+	table(class="table")
+		tr
+			th Candidato
+			th Número	
+			th Votos
+		-for(i in candidatos)
+			tr
+				td #{candidatos[i].nome}	
+				td #{candidatos[i].numero}
+				td #{candidatos[i].votos}
