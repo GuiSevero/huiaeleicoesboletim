@@ -24,3 +24,8 @@ http://eleicoesboletim.herokuapp.com/
 Para votar 
 POST http://eleicoesboletim.herokuapp.com/vote 
 Parametros: numero: numero_do_candidato
+
+
+```javascript
+$.post(http://eleicoesboletim.herokuapp.com/vote, {numero: <NUMERO_DO_CANDIDATO>}, callback);
+```
