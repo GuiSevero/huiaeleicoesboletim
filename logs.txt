@@ -1,3 +1,44 @@
+2014-09-27T15:22:00.660783+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
+2014-09-27T15:22:00.660789+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-09-27T15:22:00.660785+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:19:5)
+2014-09-27T15:22:00.660782+00:00 app[web.1]:     at Function.app.post.num (/app/app.js:28:13)
+2014-09-27T15:22:01.383761+00:00 heroku[web.1]: Process exited with status 8
+2014-09-27T15:22:01.392149+00:00 heroku[web.1]: State changed from starting to crashed
+2014-09-27T16:22:30.570640+00:00 heroku[web.1]: State changed from crashed to starting
+2014-09-27T16:22:32.907960+00:00 heroku[web.1]: Starting process with command `node app.js`
+2014-09-27T16:22:34.199880+00:00 app[web.1]: connect.multipart() will be removed in connect 3.0
+2014-09-27T16:22:34.200130+00:00 app[web.1]: visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+2014-09-27T16:22:34.200507+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
+2014-09-27T16:22:34.217302+00:00 app[web.1]: 
+2014-09-27T16:22:34.217829+00:00 app[web.1]:     throw err;
+2014-09-27T16:22:34.217835+00:00 app[web.1]:           ^
+2014-09-27T16:22:34.222178+00:00 app[web.1]: Error: Cannot find module 'stylus'
+2014-09-27T16:22:34.222183+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2014-09-27T16:22:34.222184+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2014-09-27T16:22:34.222186+00:00 app[web.1]:     at Module.require (module.js:364:17)
+2014-09-27T16:22:34.222188+00:00 app[web.1]:     at require (module.js:380:17)
+2014-09-27T16:22:34.217583+00:00 app[web.1]: module.js:340
+2014-09-27T16:22:34.222189+00:00 app[web.1]:     at Function.app.post.num (/app/app.js:28:13)
+2014-09-27T16:22:34.222190+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
+2014-09-27T16:22:34.222192+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:19:5)
+2014-09-27T16:22:34.222193+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-09-27T16:22:34.222194+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-09-27T16:22:34.222195+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-09-27T16:22:34.879170+00:00 heroku[web.1]: Process exited with status 8
+2014-09-27T16:22:34.888677+00:00 heroku[web.1]: State changed from starting to crashed
+2014-09-27T18:07:11.737636+00:00 heroku[web.1]: State changed from crashed to starting
+2014-09-27T18:07:14.397648+00:00 heroku[web.1]: Starting process with command `node app.js`
+2014-09-27T18:07:16.114943+00:00 app[web.1]: visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+2014-09-27T18:07:16.114682+00:00 app[web.1]: connect.multipart() will be removed in connect 3.0
+2014-09-27T18:07:16.144899+00:00 app[web.1]: 
+2014-09-27T18:07:16.148206+00:00 app[web.1]: Error: Cannot find module 'stylus'
+2014-09-27T18:07:16.145520+00:00 app[web.1]:     throw err;
+2014-09-27T18:07:16.145525+00:00 app[web.1]:           ^
+2014-09-27T18:07:16.148212+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2014-09-27T18:07:16.148215+00:00 app[web.1]:     at Module.require (module.js:364:17)
+2014-09-27T18:07:16.148218+00:00 app[web.1]:     at Function.app.post.num (/app/app.js:28:13)
+2014-09-27T18:07:16.148213+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2014-09-27T18:07:16.148216+00:00 app[web.1]:     at require (module.js:380:17)
 2014-09-27T18:07:16.148219+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
 2014-09-27T18:07:16.145267+00:00 app[web.1]: module.js:340
 2014-09-27T18:07:16.115303+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
@@ -8,3 +49,53 @@
 2014-09-27T18:07:16.919997+00:00 heroku[web.1]: State changed from starting to crashed
 2014-09-27T18:07:16.907991+00:00 heroku[web.1]: Process exited with status 8
 2014-09-27T18:41:05.247649+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=eleicoesboletim.herokuapp.com request_id=f049a7ec-6308-4bd8-9803-8e4f5ea8680e fwd="177.97.76.184" dyno= connect= service= status=503 bytes=
+2014-09-27T18:43:37+00:00 heroku[slug-compiler]: Slug compilation started
+2014-09-27T18:43:43+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-09-27T18:43:43.009528+00:00 heroku[api]: Deploy 8e5add2 by grsevero@gmail.com
+2014-09-27T18:43:43.009620+00:00 heroku[api]: Release v7 created by grsevero@gmail.com
+2014-09-27T18:43:43.591664+00:00 heroku[web.1]: State changed from crashed to starting
+2014-09-27T18:43:46.186252+00:00 heroku[web.1]: Starting process with command `node app.js`
+2014-09-27T18:43:47.626890+00:00 app[web.1]: visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+2014-09-27T18:43:47.666136+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2014-09-27T18:43:47.653378+00:00 app[web.1]: 
+2014-09-27T18:43:47.666129+00:00 app[web.1]: Error: Cannot find module 'stylus'
+2014-09-27T18:43:47.666141+00:00 app[web.1]:     at Module.require (module.js:364:17)
+2014-09-27T18:43:47.666148+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-09-27T18:43:47.666138+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2014-09-27T18:43:47.666147+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:30:5)
+2014-09-27T18:43:47.666143+00:00 app[web.1]:     at require (module.js:380:17)
+2014-09-27T18:43:47.654495+00:00 app[web.1]:           ^
+2014-09-27T18:43:47.666146+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
+2014-09-27T18:43:47.666144+00:00 app[web.1]:     at Function.app.post.num (/app/app.js:39:13)
+2014-09-27T18:43:47.666150+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-09-27T18:43:47.626373+00:00 app[web.1]: connect.multipart() will be removed in connect 3.0
+2014-09-27T18:43:47.666152+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-09-27T18:43:47.627408+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
+2014-09-27T18:43:47.654012+00:00 app[web.1]: module.js:340
+2014-09-27T18:43:47.654469+00:00 app[web.1]:     throw err;
+2014-09-27T18:43:48.518588+00:00 heroku[web.1]: Process exited with status 8
+2014-09-27T18:43:48.526606+00:00 heroku[web.1]: State changed from starting to crashed
+2014-09-27T18:43:48.529218+00:00 heroku[web.1]: State changed from crashed to starting
+2014-09-27T18:43:50.332963+00:00 heroku[web.1]: Starting process with command `node app.js`
+2014-09-27T18:43:51.331364+00:00 app[web.1]: 
+2014-09-27T18:43:51.331979+00:00 app[web.1]:     throw err;
+2014-09-27T18:43:51.331987+00:00 app[web.1]:           ^
+2014-09-27T18:43:51.334186+00:00 app[web.1]: Error: Cannot find module 'stylus'
+2014-09-27T18:43:51.334189+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2014-09-27T18:43:51.334190+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2014-09-27T18:43:51.334193+00:00 app[web.1]:     at Module.require (module.js:364:17)
+2014-09-27T18:43:51.334194+00:00 app[web.1]:     at require (module.js:380:17)
+2014-09-27T18:43:51.334196+00:00 app[web.1]:     at Function.app.post.num (/app/app.js:39:13)
+2014-09-27T18:43:51.334198+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
+2014-09-27T18:43:51.334199+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:30:5)
+2014-09-27T18:43:51.334201+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-09-27T18:43:51.314684+00:00 app[web.1]: connect.multipart() will be removed in connect 3.0
+2014-09-27T18:43:51.334204+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-09-27T18:43:51.334203+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-09-27T18:43:51.314905+00:00 app[web.1]: visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+2014-09-27T18:43:51.315280+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
+2014-09-27T18:43:51.331704+00:00 app[web.1]: module.js:340
+2014-09-27T18:43:52.078967+00:00 heroku[web.1]: State changed from starting to crashed
+2014-09-27T18:43:52.070548+00:00 heroku[web.1]: Process exited with status 8
+2014-09-27T18:43:53.031739+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=eleicoesboletim.herokuapp.com request_id=7aee790d-50d6-4f1d-a07e-a57691c9fbec fwd="54.91.217.5" dyno= connect= service= status=503 bytes=
+2014-09-27T18:43:53.134362+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=eleicoesboletim.herokuapp.com request_id=22fd32d7-27e7-4de2-b29b-ae08e5ca1975 fwd="177.97.76.184" dyno= connect= service= status=503 bytes=
