@@ -27,5 +27,5 @@ Parametros: numero: numero_do_candidato
 
 
 ```javascript
-$.post(http://eleicoesboletim.herokuapp.com/vote, {numero: <NUMERO_DO_CANDIDATO>}, callback);
+$.post("http://eleicoesboletim.herokuapp.com/vote", {numero: "<NUMERO_DO_CANDIDATO>"}, callback);
 ```
