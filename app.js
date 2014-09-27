@@ -21,7 +21,6 @@ var MONGOHQ_URL="mongodb://huia:aaa123@kahana.mongohq.com:10002/app30051564"
 
 var app = express();
 
-//app.use(logfmt.requestLogger());
 
 app.configure(function(){
     app.set('port', process.env.PORT || 8080);
@@ -32,17 +31,19 @@ app.configure(function(){
     app.use(express.cookieParser('diogola'));
     app.use(express.session());
     app.use(app.router);  
-    app.use(require('stylus').middleware(__dirname + '/public'));
     app.use(express.static(path.join(__dirname, 'public')));
   });
 
-/*
-var gabi = new Candidato({ nome: 'Gabriela Jung', imagem: 'tababa', numero: '12020' });
 
-gabi.save(function(err){
-  if(err) console.log(err);
+app.get('/', function(req, res) {
+
+   Candidato.find( {}, function(err, documents){
+        if (err) res.send(500);
+        res.render('index', { candidatos: documents });   
+    });
+
 });
-*/
+
 
 
 app.post('/vote', function(req, res){
@@ -60,14 +61,7 @@ app.post('/vote', function(req, res){
 });
 
 
-app.get('/', function(req, res) {
 
-   Candidato.find( {}, function(err, documents){
-        if (err) res.send(500);
-        res.render('index', { candidatos: documents });   
-    });
-
-});
 
 app.get('/add', function(req, res) {
 
@@ -89,8 +83,6 @@ app.post('/add', function(req, res) {
     });
   });
 });
-
-
 
 
 
