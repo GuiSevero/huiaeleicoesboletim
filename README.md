@@ -12,3 +12,15 @@
 - MongoDB
 - Mongoose
 - Websockets (Socket.IO)
+
+### Manual
+
+Para adicionar candidato
+http://eleicoesboletim.herokuapp.com/add
+
+Para ver candidatos
+http://eleicoesboletim.herokuapp.com/
+
+Para votar 
+POST http://eleicoesboletim.herokuapp.com/vote 
+Parametros: numero: numero_do_candidato
