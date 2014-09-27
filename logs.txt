@@ -1,0 +1,10 @@
+2014-09-27T18:07:16.148219+00:00 app[web.1]:     at Function.app.configure (/app/node_modules/express/lib/application.js:391:61)
+2014-09-27T18:07:16.145267+00:00 app[web.1]: module.js:340
+2014-09-27T18:07:16.115303+00:00 app[web.1]: connect.limit() will be removed in connect 3.0
+2014-09-27T18:07:16.148222+00:00 app[web.1]:     at Module._compile (module.js:456:26)
+2014-09-27T18:07:16.148223+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:474:10)
+2014-09-27T18:07:16.148221+00:00 app[web.1]:     at Object.<anonymous> (/app/app.js:19:5)
+2014-09-27T18:07:16.148225+00:00 app[web.1]:     at Module.load (module.js:356:32)
+2014-09-27T18:07:16.919997+00:00 heroku[web.1]: State changed from starting to crashed
+2014-09-27T18:07:16.907991+00:00 heroku[web.1]: Process exited with status 8
+2014-09-27T18:41:05.247649+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=eleicoesboletim.herokuapp.com request_id=f049a7ec-6308-4bd8-9803-8e4f5ea8680e fwd="177.97.76.184" dyno= connect= service= status=503 bytes=

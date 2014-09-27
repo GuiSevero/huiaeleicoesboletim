@@ -10,7 +10,18 @@ var MONGOHQ_URL="mongodb://huia:aaa123@kahana.mongohq.com:10002/app30051564"
     //, io = require('socket.io')
 
     mongoose.connect(process.env.MONGOHQ_URL || MONGOHQ_URL);
-    Candidato = mongoose.model('Candidato', { nome: "string", imagem: "string" , numero: "string", votos: "number"});
+    Candidato = mongoose.model('Candidato', 
+      { 
+            nome: "string"
+          , imagem: "string"
+          , numero: "string"
+          , votos: "array"
+      });
+
+     Voto = mongoose.model('Voto', 
+      { 
+            timestamp: "string"
+      });
 
 var app = express();
 
