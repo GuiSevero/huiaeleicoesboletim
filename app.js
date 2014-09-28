@@ -19,12 +19,6 @@ var MONGOHQ_URL="mongodb://huia:aaa123@kahana.mongohq.com:10002/app30051564"
           , votos: [{timestamp: Date}]
       });
 
-var compileCss = function(str, path) {
-  return stylus(str)
-    .set('filename', path)
-    .set('compress', true);
-}
-
 var app = express();
 
 app.configure(function(){
@@ -35,14 +29,22 @@ app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.cookieParser('diogola'));
     app.use(express.session());
-    app.use(app.router);  
-    app.use(express.static(path.join(__dirname, 'public')));
+    
+    app.use(express.static(__dirname + '/public'));
+    
     app.use(stylus.middleware({
-        src: __dirname
-      , dest: __dirname + '/public'
-      , build: true
-      , compile: compileCss
+        src:   __dirname + '/public/'
+      , debug: true
+      , compile : function(str, path) {
+        console.info('compiling');
+        return stylus(str)
+          .set('filename', path)
+          .set('warn', true)
+          .set('compress', true);
+      }
     }));
+
+    app.use(app.router);
   });
 
 
