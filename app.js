@@ -1,12 +1,13 @@
 var MONGOHQ_URL="mongodb://huia:aaa123@kahana.mongohq.com:10002/app30051564"
 
- var express = require('express')
+ var  express = require('express')
+    , stylus = require('stylus')
     , http = require('http')
     , https = require("https")
     , path = require('path')
     , mongoose = require("mongoose")
     , querystring = require('querystring')
-    , _ = require('underscore')
+    , _ = require('underscore');
     //, io = require('socket.io')
 
     mongoose.connect(process.env.MONGOHQ_URL || MONGOHQ_URL);
@@ -18,9 +19,13 @@ var MONGOHQ_URL="mongodb://huia:aaa123@kahana.mongohq.com:10002/app30051564"
           , votos: [{timestamp: Date}]
       });
 
+var compileCss = function(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .set('compress', true);
+}
 
 var app = express();
-
 
 app.configure(function(){
     app.set('port', process.env.PORT || 8080);
@@ -32,6 +37,12 @@ app.configure(function(){
     app.use(express.session());
     app.use(app.router);  
     app.use(express.static(path.join(__dirname, 'public')));
+    app.use(stylus.middleware({
+        src: __dirname
+      , dest: __dirname + '/public'
+      , build: true
+      , compile: compileCss
+    }));
   });
 
 
