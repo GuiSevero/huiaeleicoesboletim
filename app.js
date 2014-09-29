@@ -60,6 +60,50 @@ app.post('/vote', function(req, res){
       });
 });
 
+app.get('/votos', function(req, res){
+
+  Candidato.find({}, function(err, docs){
+    if (err) res.send(500, err);
+
+    result = {
+        total: _.reduce(docs, function(k, doc){return k + doc.votos.length},0)
+    }
+
+    result.candidatos = _.map(docs, function(doc){
+      return {
+        nome: doc.nome,
+        numero: doc.numero,
+        porcentagem: (doc.votos.length / result.total) * 100,
+        votos: doc.votos.length
+      };
+    })
+    
+    res.send(result);
+        
+  });
+
+/*
+  var o = {
+    map: function(){
+      emit(this.nome, this.votos == undefined ? 0 : this.votos.length);
+    },
+    reduce: function(k, vals){
+      return 200;
+    }
+  };
+  
+  Candidato.mapReduce(o, function (err, results) {
+    console.log(results);
+    console.log(err);
+    if (err) res.send(500, err);
+    res.send(results);
+  });
+*/
+
+});
+
+
+
 
 
 
