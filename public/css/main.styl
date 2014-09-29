@@ -1,0 +1,83 @@
+body
+	background #fff
+
+#urna
+	background-image url(../img/urna.png)
+	background-position 0 100%
+	display block
+	height 447px
+	width 959px
+	margin 0 auto
+	position relative
+
+	.teclas
+		width 73px
+		height 62px
+		text-indent -99em
+		overflow hidden
+		position absolute
+		background-repeat no-repeat
+
+	for i in 0..9
+		#tecla-{i}:active,
+		#tecla-{i}:hover
+			background-image url(../img/tecla/i.jpg)
+
+	#tecla-1
+	#tecla-4
+	#tecla-7
+		left 669px
+
+	#tecla-2
+	#tecla-5
+	#tecla-8
+		left 742px
+
+	#tecla-3
+	#tecla-6
+	#tecla-9
+		left 810px
+
+	#tecla-1
+	#tecla-2
+	#tecla-3
+		top 102px
+
+	#tecla-4
+	#tecla-5
+	#tecla-6
+		top 157px
+
+	#tecla-7
+	#tecla-8
+	#tecla-9
+		top 219px
+
+	#tecla-0
+		left 742px
+		top 276px
+
+	#tecla-branco
+	#tecla-corrige
+	#tecla-confirma
+		height 70px
+		width 94px
+
+	#tecla-branco
+		top 327px
+		left 641px
+		&:hover
+			background-image url(../img/tecla/branco.jpg)
+
+	#tecla-corrige
+		top 327px
+		left 732px
+		&:hover
+			background-image url(../img/tecla/corrige.jpg)
+		
+	#tecla-confirma
+		left 822px
+		top 318px
+		&:hover
+			background-image url(../img/tecla/confirma.jpg)
+		

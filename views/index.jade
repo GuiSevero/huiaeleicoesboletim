@@ -2,6 +2,14 @@
 extends ./layout.jade
 
 block content
+
+	div#urna
+		-for(var i = 0; i <= 9; ++i)
+			a.teclas(id= 'tecla-' + i, href="#") #{i}
+		a(href="#").teclas#tecla-branco Branco
+		a(href="#").teclas#tecla-corrige Corrige
+		a(href="#").teclas#tecla-confirma Confirma
+
 	h1 Candidatos
 	table(class="table")
 		tr
