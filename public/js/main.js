@@ -27,6 +27,11 @@ var candidatos = [
 	}
 ];
 
+Parse.initialize(
+	'BBQtIuI6B3xGuBcG4rsx05NcQsR2qIoLVqtyiKzv', 
+	'JDwl5YgOhwqM3FLN4QAUoVYCR1ejIT0rBtyfVYLk'
+);
+
 if (exibeResultados) {
 	var resultados = new Resultado(candidatos);
 } else {
