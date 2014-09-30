@@ -49,20 +49,15 @@ app.configure(function(){
 
 
 app.get('/', function(req, res) {
-
-   Candidato.find( {}, function(err, documents){
-        if (err) res.send(500);
-        res.render('index', { candidatos: documents });   
-    });
-
+  res.render('index');
 });
 
-
+app.get('/resultados', function(req, res) {
+  res.render('result');
+});
 
 app.post('/vote', function(req, res){
-    
     var num = req.body.numero;
-
       Candidato.findOne( {numero: num}, function(err, doc){
         if (err) res.send(500);
         doc.votos.push({timestamp: new Date()});
@@ -72,32 +67,6 @@ app.post('/vote', function(req, res){
         });
       });
 });
-
-
-
-
-app.get('/add', function(req, res) {
-
-    Candidato.find( {}, function(err, documents){
-        if (err) res.send(500);
-        res.render('form', { candidatos: documents });   
-    });
-});
-
-
-app.post('/add', function(req, res) {
-  var cand = new Candidato(req.body.Candidato);
-  cand.save(function(err){
-    if(err) res.send(500);
-    Candidato.find( {}, function(err, documents){
-        if (err) res.send(500);
-        io.sockets.emit("new_candidato", {data: cand});
-        res.render('form', { candidatos: documents });   
-    });
-  });
-});
-
-
 
 var sv = http.createServer(app);
 var io = require('socket.io').listen(sv);

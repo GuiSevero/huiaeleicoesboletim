@@ -50,10 +50,9 @@ Teclas.prototype = {
 			$('#fim').fadeIn();
 			var voto = new Colecao_Votos();
 			var candidato = ((this.urna.branco) ? 'branco' : (this.urna.nulo) ? 'nulo' : this.urna.numero);
-			alert(candidato);
 			voto.em(candidato);
 			setTimeout(function() {
-				// window.location.reload();
+				window.location.reload();
 			}, 5000);
 			return;
 		} else {

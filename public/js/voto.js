@@ -7,7 +7,7 @@ var Modelo_Votos = Backbone.Model.extend({
 
 var Colecao_Votos = Backbone.Collection.extend({
 	model: Modelo_Votos,
-	localStorage: new Backbone.LocalStorage("Votos"),
+	localStorage: new Backbone.LocalStorage("Colecao_Votos"),
 
 	em: function(numero) {
 		// colocar persistência externa aqui
