@@ -4,20 +4,32 @@ extends ./layout.jade
 block content
 
 	div#urna
-		-for(var i = 0; i <= 9; ++i)
-			a.teclas(id= 'tecla-' + i, href="#") #{i}
-		a(href="#").teclas#tecla-branco Branco
-		a(href="#").teclas#tecla-corrige Corrige
-		a(href="#").teclas#tecla-confirma Confirma
+		#urna-elementos 
+			-for(var i = 0; i <= 9; ++i)
+				a.teclas(id= 'tecla-' + i, href="#", data-tecla="#{i}") #{i}
+			a(href="#", data-tecla="branco").teclas#tecla-branco Branco
+			a(href="#", data-tecla="corrige").teclas#tecla-corrige Corrige
+			a(href="#", data-tecla="confirma").teclas#tecla-confirma Confirma
 
-	h1 Candidatos
-	table(class="table")
-		tr
-			th Candidato
-			th Número	
-			th Votos
-		-for(i in candidatos)
-			tr
-				td #{candidatos[i].nome}	
-				td #{candidatos[i].numero}
-				td #{candidatos[i].votos.length}
+			span#candidato-titulo Candidato
+
+			span#voto-branco VOTO EM BRANCO
+
+			span#voto-nulo VOTO NULO
+
+			p#voto-legenda.
+				Aperte a tecla:<br>
+				VERDE para CONFIRMAR este voto<br>
+				LARANJA para REINICIAR este voto
+
+			span#candidato
+				#candidato-nome
+				#candidato-partido
+				img#candidato-foto
+				#candidato-numero
+					-for(var i = 1; i <= 5; ++i)
+						span.candidato-numeros(id= 'candidato-numero-' + i)
+			
+			img#candidato-cover
+
+		span#fim FIM

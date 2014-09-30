@@ -1,5 +1,6 @@
 body
 	background #fff
+	font 80% "arial", sans-serif
 
 #urna
 	background-image url(../img/urna.png)
@@ -80,4 +81,117 @@ body
 		top 318px
 		&:hover
 			background-image url(../img/tecla/confirma.jpg)
-		
+	
+	#candidato-titulo
+		position absolute
+		top 80px
+		left 155px
+		font-size 20px
+		font-weight 700
+
+	.candidato-numeros
+		font-size 40px
+		font-weight 700
+		position absolute
+		top 120px
+		border 1px solid #000
+		width 50px
+		height 47px
+		text-align center
+
+	#candidato-numero-1
+		left 155px
+
+	#candidato-numero-2
+		left 230px
+
+	#candidato-numero-3
+		left 305px
+
+	#candidato-numero-4
+		left 380px
+
+	#candidato-numero-5
+		left 455px
+
+	#candidato-foto
+		display none
+		position absolute
+		top 182px
+		width 100px
+		border 4px solid #fff
+		border-radius 3px
+		box-shadow 0 0 6px #000
+		left 75px
+		filter grayscale(90%)
+		-webkit-filter grayscale(90%)
+
+	#candidato-elementos
+		position relative
+		z-index 2
+
+	#candidato-nome
+	#candidato-partido
+		position absolute
+		left 200px
+		font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+		font-size 18px
+		font-weight 700
+		width 370px
+		text-shadow 0 0 3px #aaa
+
+	#candidato-partido
+		top 220px
+
+	#candidato-nome
+		top 260px
+
+	#candidato
+		position relative
+		z-index 2
+
+	#candidato-cover
+		display none
+		position relative
+		z-index 1
+		background-image url(../img/candidatos/gabi_cover.jpg)
+		background-size cover
+		position absolute
+		top 50px
+		width 548px
+		height 320px
+		left 49px
+		opacity 0.1
+		filter grayscale(90%)
+		-webkit-filter grayscale(90%)
+		z-index 1
+
+	#voto-branco
+	#voto-nulo
+		display none
+		top 218px
+		position absolute
+		font-size 44px
+		font-weight 700
+		left 75px
+		width 495px
+		text-align center
+
+	#voto-legenda
+		display none
+		border-top 2px solid #000
+		position absolute
+		top 288px
+		left 75px
+		padding 10px 25px
+		width 445px
+
+	#fim
+		display none
+		font-size 160px
+		font-weight 400
+		position absolute
+		top 126px
+		left 51px
+		width 545px
+		text-align center
