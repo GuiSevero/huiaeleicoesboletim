@@ -10,7 +10,7 @@ var Resultado = function(candidatos) {
 			candidatos[i].votos = (response[numero]) ? response[numero].length : '0';
 			total += candidatos[i].votos * 1;
 		};
-		var votosNulos = (response['branco']) ? response['branco'].length : 0;
+		var votosNulos = (response['nulo']) ? response['nulo'].length : 0;
 		var votosBrancos = (response['branco']) ? response['branco'].length : 0;
 		
 		candidatos.push({
