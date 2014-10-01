@@ -3,27 +3,33 @@ var exibeResultados = $('#resultados').size();
 var candidatos = [
 	{
 		id: 'ivan',
-		nome: 'Ivan Aires Stumpf',
+		nome: 'Ivan – Ele quebra mas faz!',
 		partido: 'PHP',
-		numero: 11111
+		numero: 24666
 	},
 	{
 		id: 'gabi',
-		nome: 'Gabriela Jung',
-		partido: 'MP3',
-		numero: 22222,
+		nome: 'Gabriela Jung – Para Musar por mais 4 anos!',
+		partido: 'PNG',
+		numero: 77777
 	},
 	{
 		id: 'dani',
-		nome: 'Daniela Machado',
-		partido: 'XLS',
-		numero: 33333
+		nome: 'Daniela Machado – A número 1 no coração do povão.',
+		partido: 'PPT',
+		numero: 00001
 	},
 	{
 		id: 'dome',
-		nome: 'Domênica Camatti',
+		nome: 'Domenica - Se é para dançar, vá com quem tem experiência.',
 		partido: 'PSD',
-		numero: 44444,
+		numero: 13171
+	},
+	{
+		id: 'bruno',
+		nome: 'Bruno - Ponha o dedo na consciência e vote!',
+		partido: 'PDF',
+		numero: 00004
 	}
 ];
 

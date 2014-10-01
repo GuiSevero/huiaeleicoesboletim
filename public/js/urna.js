@@ -1,5 +1,6 @@
 
 var Urna = function(candidatos) {
+	this.digitos = 5;
 	this.numero = '';
 	this.nulo = false;
 	this.branco = false;
@@ -20,7 +21,7 @@ var Urna = function(candidatos) {
 
 Urna.prototype = {
 	numeroCompleto: function() {
-		return this.numero.length >= 5;
+		return this.numero.length >= this.digitos;
 	},
 	podeDigitar: function(numerico, tecla) {
 		if (numerico && this.numeroCompleto()) {
@@ -43,7 +44,7 @@ Urna.prototype = {
 	},
 	atualizaNumero: function() {
 		var numeros = this.numero.split('');
-		for (var i = 0; i < 5; i++) {
+		for (var i = 0; i < this.digitos; i++) {
 			var numero = parseInt(numeros[i]) || '';
 			numero = (numeros[i] == 0) ? '0' : numero;
 			$('#candidato-numero-' + (i + 1)).text(numero);
