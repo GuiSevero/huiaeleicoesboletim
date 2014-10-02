@@ -5,7 +5,7 @@ var Modelo_Votos = Backbone.Model.extend({
 	}
 });
 
-var ParseVotos = Parse.Object.extend("Colecao_Votos");
+var ParseVotos = Parse.Object.extend("Votos");
 
 var Colecao_Votos = Backbone.Collection.extend({
 	model: Modelo_Votos,
