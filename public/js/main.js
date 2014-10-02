@@ -5,31 +5,31 @@ var candidatos = [
 		id: 'ivan',
 		nome: 'Ivan – Ele quebra mas faz!',
 		partido: 'PHP',
-		numero: 24666
+		numero: '24666'
 	},
 	{
 		id: 'gabi',
 		nome: 'Gabriela Jung – Para Musar por mais 4 anos!',
 		partido: 'PNG',
-		numero: 77777
+		numero: '77777'
 	},
 	{
 		id: 'dani',
 		nome: 'Daniela Machado – A número 1 no coração do povão.',
 		partido: 'PPT',
-		numero: 00001
+		numero: '00001'
 	},
 	{
 		id: 'dome',
 		nome: 'Domenica - Se é para dançar, vá com quem tem experiência.',
 		partido: 'PSD',
-		numero: 13171
+		numero: '13171'
 	},
 	{
 		id: 'bruno',
 		nome: 'Bruno - Ponha o dedo na consciência e vote!',
 		partido: 'PDF',
-		numero: 00004
+		numero: '00004'
 	}
 ];
 

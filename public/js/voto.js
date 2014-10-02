@@ -9,7 +9,7 @@ var ParseVotos = Parse.Object.extend("Colecao_Votos");
 
 var Colecao_Votos = Backbone.Collection.extend({
 	model: Modelo_Votos,
-	localStorage: new Backbone.LocalStorage("Colecao_Votos"),
+	localStorage: new Backbone.LocalStorage("Votos"),
 
 	em: function(numero) {
 		// colocar persistência externa aqui
