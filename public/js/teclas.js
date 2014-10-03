@@ -49,7 +49,7 @@ Teclas.prototype = {
 			$('#urna-elementos').hide();
 			$('#fim').fadeIn();
 			var voto = new Colecao_Votos();
-			var candidato = ((this.urna.branco) ? 'branco' : (this.urna.nulo) ? 'nulo' : this.urna.numero);
+			var candidato = ((this.urna.branco) ? ('branco-' + estado) : (this.urna.nulo) ? ('nulo-' + estado) : this.urna.numero);
 			voto.em(candidato);
 			setTimeout(function() {
 				window.location.reload();

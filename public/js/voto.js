@@ -5,14 +5,18 @@ var Modelo_Votos = Backbone.Model.extend({
 	}
 });
 
-var ParseVotos = Parse.Object.extend("Votos");
-
 var Colecao_Votos = Backbone.Collection.extend({
 	model: Modelo_Votos,
 	localStorage: new Backbone.LocalStorage("Votos"),
 
+	agrupa: function(votos) {
+		return _.groupBy(votos, function(row) {
+		    return row.voto;
+		});
+	},
+
 	em: function(numero) {
-		// colocar persistência externa aqui
+		var ParseVotos = Parse.Object.extend("Votos");
 		var parseVotos = new ParseVotos();
 		this.create({
 			voto: numero
@@ -22,11 +26,18 @@ var Colecao_Votos = Backbone.Collection.extend({
 	},
 
 	apuracao: function(callback) {
-		this.fetch().done(function(response) {
-			var votos = _.groupBy(response, function(row) {
-			    return row.voto;
-			});
-			callback(votos);
+		var self = this;
+		this.fetch().done(function(votos) {
+			callback('apuracaoOffline', self.agrupa(votos));
+		});
+	},
+
+	apuracaoOnline: function(callback) {
+		var ParseVotos = Parse.Object.extend("Votos"),
+			votos = new ParseVotos(),
+			self = this;
+		votos.fetch(function(response) {
+			callback('apuracaoOnline', self.agrupa(votos.attributes.results));
 		});
 	}
 });
