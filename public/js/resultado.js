@@ -33,7 +33,7 @@ var Resultado = function(candidatos) {
 		for (var i in candidatos) {
 			var candidato = candidatos[i],
 				porcentagem = Math.round((100 * candidato.votos) / total);
-			html += porcentagem + '% - ' + candidato.nome + ': ' + candidato.votos + '<br />';
+			html += (porcentagem ? porcentagem : 0) + '% - ' + candidato.nome + ': ' + candidato.votos + '<br />';
 		};
 		$('#resultados').html(html);
 	});

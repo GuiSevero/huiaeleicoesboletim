@@ -1,11 +1,12 @@
 
-var Urna = function(candidatos) {
+var Urna = function(candidatos, exibeFundoCandidatos) {
 	this.digitos = 5;
 	this.numero = '';
 	this.nulo = false;
 	this.branco = false;
 	this.candidatos = new Candidatos(candidatos);
 	this.teclas = new Teclas(this);
+	this.exibeFundoCandidatos = exibeFundoCandidatos;
 
 	this.textos = {
 		legenda: $('#voto-legenda'),
@@ -58,10 +59,18 @@ Urna.prototype = {
 			this.textos.nulo.fadeIn();
 			this.nulo = true;
 		} else {
-			this.textos.cover.fadeIn().css('background-image', 'url(./img/candidatos/' + candidato.id + '_cover.jpg)');
-			this.textos.foto.fadeIn().attr('src', './img/candidatos/' + candidato.id + '.jpg');
-			this.textos.partido.fadeIn().text('Partido: ' + candidato.partido);
-			this.textos.nome.fadeIn().text(candidato.nome);
+			if (this.exibeFundoCandidatos) {
+				this.textos.cover.fadeIn().css('background-image', 'url(./img/candidatos/' + candidato.id + '_cover.jpg)');
+			}
+			var url = './img/candidatos/' + candidato.id + '.jpg';
+			var image = new Image();
+			var self = this;
+			image.onload = function() {
+				self.textos.foto.attr('src', url).fadeIn();
+				self.textos.partido.fadeIn().text('Partido: ' + candidato.partido);
+				self.textos.nome.fadeIn().text(candidato.nome);
+			};
+			image.src = url;
 		}
 		this.textos.legenda.fadeIn();
 	}

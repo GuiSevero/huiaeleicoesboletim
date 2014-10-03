@@ -1,5 +1,41 @@
 var exibeResultados = $('#resultados').size();
 
+var exibeFundoCandidatos = false;
+
+var candidatos = [
+	{
+		id: 'carolina',
+		nome: 'Carolina Lorenzi - Simpatia nas alturas.',
+		partido: 'PPT',
+		numero: '21013'
+	},
+	{
+		id: 'alexandre',
+		nome: 'Alexandre Vasquez - De passinho em passinho vamos vencer essa batalha',
+		partido: 'TXT',
+		numero: '12345'
+	},
+	{
+		id: 'talita',
+		nome: 'Talita Hirahata - Pior que tá, não fica',
+		partido: 'PDF',
+		numero: '32052'
+	},
+	{
+		id: 'jana',
+		nome: 'Jana - Você não sabe, mas ela já sabe',
+		partido: 'ORG',
+		numero: '54321'
+	},
+	{
+		id: 'cris',
+		nome: 'Cris Samelli - Não deixa o samba morre!',
+		partido: 'XLS',
+		numero: '11981'
+	}
+];
+
+/*
 var candidatos = [
 	{
 		id: 'ivan',
@@ -9,7 +45,7 @@ var candidatos = [
 	},
 	{
 		id: 'gabi',
-		nome: 'Gabriela Jung – Para Musar por mais 4 anos!',
+		nome: 'Gabriela Jung – Para musar por mais 4 anos!',
 		partido: 'PNG',
 		numero: '77777'
 	},
@@ -21,25 +57,26 @@ var candidatos = [
 	},
 	{
 		id: 'dome',
-		nome: 'Domenica - Se é para dançar, vá com quem tem experiência.',
+		nome: 'Domênica - Se é para dançar, vá com quem tem experiência.',
 		partido: 'PSD',
 		numero: '13171'
 	},
 	{
 		id: 'bruno',
 		nome: 'Bruno - Ponha o dedo na consciência e vote!',
-		partido: 'PDF',
+		partido: 'ASP',
 		numero: '00004'
 	}
 ];
+*/
 
 Parse.initialize(
-	'BBQtIuI6B3xGuBcG4rsx05NcQsR2qIoLVqtyiKzv', 
+	'BBQtIuI6B3xGuBcG4rsx05NcQsR2qIoLVqtyiKzv',
 	'JDwl5YgOhwqM3FLN4QAUoVYCR1ejIT0rBtyfVYLk'
 );
 
 if (exibeResultados) {
 	var resultados = new Resultado(candidatos);
 } else {
-	var urna = new Urna(candidatos);
+	var urna = new Urna(candidatos, exibeFundoCandidatos);
 };
